@@ -1,15 +1,19 @@
 import { useState } from "react";
 
-const ListGroup = () => {
-  const cities = ["Lagos", "Benin", "Port Harcourt", "Zaria"];
+interface ListGroupProps {
+  items: string[];
+  heading: string;
+}
+
+const ListGroup = ({ items, heading }: ListGroupProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <>
-      <h1>List</h1>
-      {cities.length === 0 && <p>No items found</p>}
+      <h1>{heading}</h1>
+      {items.length === 0 && <p>No items found</p>}
       <ul className="list-group">
-        {cities.map((city, index) => (
+        {items.map((city, index) => (
           // key=city serves as a unique identifier for react
           <li
             className={
