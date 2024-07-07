@@ -1,19 +1,9 @@
-import ListGroup from "./components/ListGroup";
+import Alert from "./components/Alert";
 
 function App() {
-  let cities = ["Lagos", "Benin", "Port Harcourt", "Zaria"];
-
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  };
-
   return (
     <div>
-      <ListGroup
-        items={cities}
-        heading={"Cities"}
-        onSelectItem={handleSelectItem}
-      />
+      <Alert>Hello Typescript</Alert>
     </div>
   );
 }
