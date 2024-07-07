@@ -1,4 +1,5 @@
 import Alert from "./components/Alert";
+import Button from "./components/Button";
 
 function App() {
   return (
@@ -6,6 +7,7 @@ function App() {
       <Alert>
         Hello <strong>Typescript</strong>
       </Alert>
+      <Button name="Primary Button" />
     </div>
   );
 }
