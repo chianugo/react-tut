@@ -7,7 +7,9 @@ function App() {
       <Alert>
         Hello <strong>Typescript</strong>
       </Alert>
-      <Button name="Primary Button" />
+      <Button color="primary" onClick={() => console.log("clicked")}>
+        Primary Button
+      </Button>
     </div>
   );
 }
