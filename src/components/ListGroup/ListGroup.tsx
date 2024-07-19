@@ -14,7 +14,7 @@ const ListGroup = ({ items, heading, onSelectItem }: ListGroupProps) => {
     <>
       <h1>{heading}</h1>
       {items.length === 0 && <p>No items found</p>}
-      <ul className={styles["list-group"]}>
+      <ul className={[styles.listGroup, styles.container].join(" ")}>
         {items.map((city, index) => (
           // key=city serves as a unique identifier for react
           <li
