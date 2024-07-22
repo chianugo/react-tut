@@ -1,5 +1,16 @@
 import { useState } from "react";
 import styles from "./ListGroup.module.css";
+import styled from "styled-components";
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+  font-size: 3rem;
+`;
+
+const ListItem = styled.li`
+  padding: 25px 0;
+`;
 
 interface ListGroupProps {
   items: string[];
@@ -14,15 +25,10 @@ const ListGroup = ({ items, heading, onSelectItem }: ListGroupProps) => {
     <>
       <h1>{heading}</h1>
       {items.length === 0 && <p>No items found</p>}
-      <ul className={[styles.listGroup, styles.container].join(" ")}>
+      <List>
         {items.map((city, index) => (
           // key=city serves as a unique identifier for react
-          <li
-            className={
-              selectedIndex === index
-                ? "list-group-item active"
-                : "list-group-item"
-            }
+          <ListItem
             key={index}
             onClick={() => {
               setSelectedIndex(index);
@@ -30,9 +36,9 @@ const ListGroup = ({ items, heading, onSelectItem }: ListGroupProps) => {
             }}
           >
             {city}
-          </li>
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </>
   );
 };
