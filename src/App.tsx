@@ -1,16 +1,10 @@
-import Button from "./components/Button";
-import "./components/Button/Button.module.css";
+import Like from "./components/Like/Like";
+import "./components/Like/Like.module.css";
 
 function App() {
   return (
     <div>
-      <Button
-        onClick={() => {
-          console.log("hello");
-        }}
-      >
-        My Button
-      </Button>
+      <Like></Like>
     </div>
   );
 }
